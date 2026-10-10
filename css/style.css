@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
@@ -50,10 +49,10 @@ p {
 
 nav {
     background-color: #e2eba4;
-    display: flex;             
+    display: flex;            
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;         
+    padding: 10px 20px;        
     border-radius: 8px;
 }
 
@@ -85,10 +84,11 @@ nav img {
     height: auto;
 }
 
+/* Định dạng tổng quát cho ảnh */
 img {
     max-width: 100%;
     height: auto;
-    border: 3px solid #1e293b;    
+    border: 3px solid #1e293b;     
     padding: 5px;                  
     border-radius: 10px;           
     box-sizing: border-box;
@@ -112,6 +112,7 @@ img {
     margin-bottom: 20px;
 }
 
+/* --- TỐI ƯU CỰC MẠNH CHO PHẦN LƯỚI ẢNH (GRID) --- */
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
@@ -120,34 +121,80 @@ img {
     padding: 0;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia đúng 2 cột ngang nhau */
+    gap: 30px;                             /* Khoảng cách giữa các ô */
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.grid li {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #1e293b;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
 .grid img {
-    width: 100%;
+    width: 100% !important;
+    height: 200px !important;  /* Cố định chiều cao để ảnh nhỏ gọn, đều tắp */
+    object-fit: cover !important; /* Cắt ảnh vừa khít khung, không bị méo */
+    border-radius: 8px;
+    border: 2px solid #1e293b;
     transition: transform 0.3s ease;
 }
 
 .grid img:hover {
-    transform: scale(1.03); 
+    transform: scale(1.02); 
 }
 
+/* --- TỐI ƯU CHO TRANG PARKS (3 CỘT) --- */
 .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;                             
     list-style: none;
     padding: 0;
+    margin: 20px 0;
 }
 
 .flex li {
-    width: 30%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.flex figure {
+    margin: 0;
+    width: 100%;
+    height: 200px; /* Cố định chiều cao khung ảnh 3 cột */
+    overflow: hidden;
+}
+
+.flex img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.flex img:hover {
+    transform: scale(1.03);
 }
 
 .flex li:nth-child(even) img {
-    border-radius: 50px 10px; /* Anh vi tri chan */
+    border-radius: 50px 10px; 
     border-color: #e291be;
 }
 
 .flex li:nth-child(odd) img {
-    border-radius: 10px 50px; /* Anh vi tri le */
+    border-radius: 10px 50px; 
     border-color: #8ec5d3;
 }
