@@ -94,6 +94,24 @@ img {
     box-sizing: border-box;
 }
 
+#image {
+    height: 300px;
+    border: 3px solid #1e293b;
+    background-color: #88e8c8;
+    background-repeat: no-repeat;
+    background-size: contain;          
+    background-position: 20px center;   
+    color: #1e293b;
+    text-align: right;                  
+    padding-right: 50px;                
+    font-size: 110%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
