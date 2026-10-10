@@ -1,29 +1,26 @@
+
 body {
     font-family: Arial, sans-serif;
     font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 header {
     background-color: #8ec5d3;
-}
-
-nav {
-    background-color: #e2eba4;
-    display: inline-block;
-    width: 80%;
-}
-
-nav img {
-    width: 10%;
+    padding: 15px;
 }
 
 main {
     background-color: #f3f2f2;
     font-size: 18px;
+    padding: 20px;
 }
 
 footer {
     background-color: #e291be;
+    text-align: center;
+    padding: 15px;
 }
 
 h1 {
@@ -36,34 +33,103 @@ p {
     line-height: 1.5;
 }
 
+.skip-link {
+    position: absolute;
+    top: -50px; 
+    left: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 10px; 
+}
+
+nav {
+    background-color: #e2eba4;
+    display: flex;             
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;         
+    border-radius: 8px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #1e293b;
+    color: #ffffff;
+    border-radius: 5px;
+    transform: scale(1.05); 
+}
+
+nav img {
+    width: 60px;
+    height: auto;
+}
+
 img {
     max-width: 100%;
     height: auto;
+    border: 3px solid #1e293b;    
+    padding: 5px;                  
+    border-radius: 10px;           
+    box-sizing: border-box;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 40% 40%;
-    justify-content: space-around;
-    align-items: center;
-    row-gap: 20px;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
     list-style: none;
     padding: 0;
 }
 
 .grid img {
     width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.grid img:hover {
+    transform: scale(1.03); 
 }
 
 .flex {
     display: flex;
-    flex-wrap: wrap;               
-    justify-content: space-between; 
-    list-style: none;               
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+    list-style: none;
     padding: 0;
 }
 
 .flex li {
-    width: 30%;                    
-    margin-bottom: 20px;           
+    width: 30%;
+}
+
+.flex li:nth-child(even) img {
+    border-radius: 50px 10px; /* Anh vi tri chan */
+    border-color: #e291be;
+}
+
+.flex li:nth-child(odd) img {
+    border-radius: 10px 50px; /* Anh vi tri le */
+    border-color: #8ec5d3;
 }
