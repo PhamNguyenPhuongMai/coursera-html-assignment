@@ -84,13 +84,15 @@ nav img {
     height: auto;
 }
 
-/* Định dạng tổng quát cho ảnh */
 img {
     max-width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    object-position: center !important;
     border: 3px solid #1e293b;     
-    padding: 5px;                  
-    border-radius: 10px;           
+    padding: 5px;                              
+    border-radius: 10px;          
     box-sizing: border-box;
 }
 
@@ -102,8 +104,8 @@ img {
     background-size: contain;          
     background-position: 20px center;   
     color: #1e293b;
-    text-align: right;                  
-    padding-right: 50px;                
+    text-align: right;                                    
+    padding-right: 50px;                                  
     font-size: 110%;
     font-weight: bold;
     display: flex;
@@ -112,89 +114,95 @@ img {
     margin-bottom: 20px;
 }
 
-/* --- TỐI ƯU CỰC MẠNH CHO PHẦN LƯỚI ẢNH (GRID) --- */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 20px;
-    list-style: none;
-    padding: 0;
+ul.grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important; 
+    gap: 15px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 20px 0 !important;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Chia đúng 2 cột ngang nhau */
-    gap: 30px;                             /* Khoảng cách giữa các ô */
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-}
-
-.grid li {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    padding: 15px;
-    border: 2px solid #1e293b;
-    border-radius: 12px;
-    box-sizing: border-box;
-}
-
-.grid img {
+ul.grid > li {
+    display: flex !important;
+    flex-direction: column !important;
+    background: #fff !important;
+    padding: 15px !important;
+    border: 2px solid #1e293b !important;
+    border-radius: 12px !important;
+    box-sizing: border-box !important;
     width: 100% !important;
-    height: 200px !important;  /* Cố định chiều cao để ảnh nhỏ gọn, đều tắp */
-    object-fit: cover !important; /* Cắt ảnh vừa khít khung, không bị méo */
-    border-radius: 8px;
-    border: 2px solid #1e293b;
+    grid-column: auto !important;
+}
+
+ul.grid > li img {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    border: 2px solid #1e293b !important;
     transition: transform 0.3s ease;
 }
 
-.grid img:hover {
+ul.grid > li img:hover {
     transform: scale(1.02); 
 }
 
-/* --- TỐI ƯU CHO TRANG PARKS (3 CỘT) --- */
-.flex {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;                             
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
+@media screen and (min-width: 772px) {
+    ul.grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+    
+    ul.grid > li {
+        grid-column: auto !important;
+    }
+
+    ul.grid > li img {
+        border-radius: 50% !important;
+        height: 250px !important;
+        width: 250px !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
 }
 
-.flex li {
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
+@media screen and (min-width: 992px) {
+    ul.grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px !important;
+    }
+    
+    ul.grid > li {
+        grid-column: auto !important;
+    }
+
+    ul.grid > li img {
+        border-radius: 0 !important;
+        width: 100% !important;
+        height: 220px !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        margin: 0 !important;
+    }
 }
 
-.flex figure {
-    margin: 0;
-    width: 100%;
-    height: 200px; /* Cố định chiều cao khung ảnh 3 cột */
-    overflow: hidden;
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
-.flex img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    display: block;
-    transition: transform 0.3s ease;
-}
-
-.flex img:hover {
-    transform: scale(1.03);
-}
-
-.flex li:nth-child(even) img {
-    border-radius: 50px 10px; 
-    border-color: #e291be;
-}
-
-.flex li:nth-child(odd) img {
-    border-radius: 10px 50px; 
-    border-color: #8ec5d3;
+@media (prefers-color-scheme: dark) {
+    ul.grid > li {
+        background-color: #1e293b !important;
+        color: #fef08a !important;
+        border-color: #000000 !important;
+    }
+    h1, p, nav a {
+        color: #f3f2f2 !important;
+    }
 }
